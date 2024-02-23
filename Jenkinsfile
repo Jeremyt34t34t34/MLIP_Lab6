@@ -15,15 +15,15 @@ pipeline {
                 sh '''#!/bin/bash
                 echo 'Test Step: We run testing tool like pytest here'
 
-                # TODO fill out the path to env environment
-                source mlip/bin/activate
-
+                # TODO fill out the path to conda here
+                # sudo /PATH/TO/CONDA init
+                source ~/miniconda3/etc/profile.d/conda.sh
                 # TODO Complete the command to run pytest
+                conda activate mlip
+                # sudo /PATH/TO/CONDA run -n <Envinronment Name> <Command you want to run>
                 pytest
                 # echo 'pytest not runned'
                 # exit 1 #comment this line after implementing Jenkinsfile
-                # Deactive the virtual environment
-                deactivate
                 '''
 
             }
